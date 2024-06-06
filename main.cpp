@@ -14,11 +14,10 @@ int tankVolumeMin = 0; // Minimum Volume of the Water Tank
 int tankVolumeMax = 100; // Maximum Volume of the Water Tank
 int volumeResolution = 10; // Resolution of Volume Increments
 double dt = 0.04; // Simulation time interval
-int t_0 = 0; // Simulation Initial Time
+// = 0; // Simulation Initial Time
 int t_end = 10; // Simulation End Time
 int waterDensity = 1000; // Density of Water [kg/m^3]
 double tLength = t_end / dt; // Vector length of time points based on interval
-std::vector<double> t(tLength, 0.0); // Time Vector
 
 int Kp = 1000; // Proportional gain constant
 
@@ -65,8 +64,7 @@ int main () {
 
     // Simulation Start
     // Iterate through simulation to length of time t
-    for (int i = 0; i < t.size(); i++){
-    //for (int i = 0; i < 300; i++){
+    for (int i = 0; i < tLength; i++){
 
         // Determine reference value vector for the tank
         tankVolumeRefVec[i] = tankVolumeReference;
